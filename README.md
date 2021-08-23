@@ -120,7 +120,7 @@ The file contains following segments:-
 
 2. **Deployment** - This contains the **k8s** deployment of the application. The **POD** refers to the **configmap** for the configuration. Image used for the **POD** is **image: testhubk8s/myservice:testservice.1.0**, change that according to your registry url.
 
-**Note:-** DockerHub URL [https://hub.docker.com/r/testhubk8s/myservice:testservice.1.0](https://hub.docker.com/r/testhubk8s/myservice:testservice.1.0)
+**Note:-** DockerHub URL [https://hub.docker.com/repository/docker/testhubk8s/myservice](https://hub.docker.com/repository/docker/testhubk8s/myservice)
 
 3. **Service** - This will expose the application as **ClusterIP** on **port 80** and **targetPort 8080**. Change the **targetPort** value according to the **PORT** value in **configmap**.
 
@@ -286,9 +286,10 @@ Enter the **username** and **password** we already collected to login.
 ```
 kubectl get svc
 ```
+![Prometheus Server](https://user-images.githubusercontent.com/19147273/130401811-2e576b5d-9ae7-475a-843a-ff824a73e424.png)
+
 
 **Note:-** Write down the **ClusterIP** for **prometheus-server**
-
 
 
 6. Add the **ClusterIP** as the **Prometheus** url
@@ -304,7 +305,11 @@ kubectl get svc
 
 2. Click on **Upload JSON file** and select the file from the **grafana** folder within this repository.
 
+   ![image](https://user-images.githubusercontent.com/19147273/130402045-7ea205f8-c834-439e-a0df-e113fc5fa6dc.png)
+
+
 
 3. Click on **Import** button it will create the dashboard with the **Prometheus** metrics.
+   "Browse Json file @ grafana\sample External URL Test.json or copy the content of json and upload"
 
 
