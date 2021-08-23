@@ -143,12 +143,19 @@ kubectl apply -f k8s/sample_external_url.yaml -n sample-external-url
 ```
 kubectl get all -n sample-external-url
 ```
+![kubectl-get-all](https://user-images.githubusercontent.com/19147273/130400037-3fdd578f-2cd3-4367-83b1-a760f62d2668.PNG)
 
-![Kubectl Get All Resources](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/kubectl-get-all.png "Kubectl Get All Resources")
+4. Display all the services deployed
+
+```
+kubectl get svc -n sample-external-url
+```
+![kubectl-get-svc](https://user-images.githubusercontent.com/19147273/130400858-eafd9c28-e34d-4aab-bb4f-416d56888593.PNG)
+
 
 **Note:-** Write down the **CLUSTER-IP** we would need it later.
 
-4. Check the application
+5. Check the application
 
 ```
 kubectl port-forward service/sample-external-url-service 8080:80 -n sample-external-url
@@ -205,6 +212,7 @@ kubectl get secrets grafana -o jsonpath='{.data.admin-user}' | base64 --decode |
 ```
 kubectl edit cm/prometheus-server
 ```
+![prometheus-config](https://user-images.githubusercontent.com/19147273/130400226-063174f1-d70a-4aad-8144-0ff132477f0a.PNG)
 
 2. Add the following config under **scrape_configs**
 
@@ -213,6 +221,8 @@ kubectl edit cm/prometheus-server
       static_configs:
       - targets: ['CLUSTER-IP:80']
 ```
+![image](https://user-images.githubusercontent.com/19147273/130400301-a15331e1-89d7-42b1-81eb-bf3e25dd96da.png)
+
 **Note:-** Replace **CLUSTER-IP** with the ip that we noted down earlier. In my case it will be **10.254.42.142**.
 
 ## Port Forward Prometheus And Grafana
@@ -237,7 +247,9 @@ Open your browser and point to [http://localhost:9090](http://localhost:9090) yo
 
 Open your browser and point to [http://localhost:9090](http://localhost:9090) you will see **Prometheus UI**. Go to **Status** > **Configuration** and you can see that your configuration has been added under **scrape_configs:**.
 
-![Prometheus Configuration](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/prometheus-config.png "Prometheus Configuration")
+![prometheus-config](https://user-images.githubusercontent.com/19147273/130400385-8d66ee10-2f43-4420-90b7-770616177ffc.PNG)
+
+
 
 5. Check **Prometheus** metrics collected from our **Application**
 
@@ -260,11 +272,14 @@ Enter the **username** and **password** we already collected to login.
 
 3. Click on **Add data source**
 
-![Grafana Add Data Source](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/grafan-configuration.png "Grafana Add Data Source")
+![grafan-configuration](https://user-images.githubusercontent.com/19147273/130400582-a297302b-e6e1-425c-a2f0-d4a32b6bfbf5.png)
+
+
 
 4. Select **Prometheus** as the data source
 
-![Grafana Add Data Source Prometheus](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/grafan-configuration-add-data-source.png "Grafana Add Data Source Prometheus")
+![grafan-configuration-add-data-source](https://user-images.githubusercontent.com/19147273/130400614-f46ee497-e468-470e-aabf-d636be040ed0.png)
+
 
 5. Check Prometheus cluster ip
 
@@ -274,11 +289,11 @@ kubectl get svc
 
 **Note:-** Write down the **ClusterIP** for **prometheus-server**
 
-![Kubectl Get Prometheus Cluster IP](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/kubectl-get-svc.png "Kubectl Get Prometheus Cluster IP")
+
 
 6. Add the **ClusterIP** as the **Prometheus** url
 
-![Grafana Add Data Source Prometheus IP](https://raw.githubusercontent.com/testPytonService/tree/devlop/screenshots/grafan-configuration-add-data-source-prometheus.png "Grafana Add Data Source Prometheus IP")
+
 
 7. Click **Save & Test**
 
