@@ -144,7 +144,7 @@ kubectl apply -f k8s/sample_external_url.yaml -n sample-external-url
 kubectl get all -n sample-external-url
 ```
 
-![Kubectl Get All Resources](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/kubectl-get-all.png "Kubectl Get All Resources")
+![Kubectl Get All Resources](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/kubectl-get-all.png "Kubectl Get All Resources")
 
 **Note:-** Write down the **CLUSTER-IP** we would need it later.
 
@@ -237,7 +237,7 @@ Open your browser and point to [http://localhost:9090](http://localhost:9090) yo
 
 Open your browser and point to [http://localhost:9090](http://localhost:9090) you will see **Prometheus UI**. Go to **Status** > **Configuration** and you can see that your configuration has been added under **scrape_configs:**.
 
-![Prometheus Configuration](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/prometheus-config.png "Prometheus Configuration")
+![Prometheus Configuration](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/prometheus-config.png "Prometheus Configuration")
 
 5. Check **Prometheus** metrics collected from our **Application**
 
@@ -260,11 +260,11 @@ Enter the **username** and **password** we already collected to login.
 
 3. Click on **Add data source**
 
-![Grafana Add Data Source](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/grafan-configuration.png "Grafana Add Data Source")
+![Grafana Add Data Source](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/grafan-configuration.png "Grafana Add Data Source")
 
 4. Select **Prometheus** as the data source
 
-![Grafana Add Data Source Prometheus](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/grafan-configuration-add-data-source.png "Grafana Add Data Source Prometheus")
+![Grafana Add Data Source Prometheus](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/grafan-configuration-add-data-source.png "Grafana Add Data Source Prometheus")
 
 5. Check Prometheus cluster ip
 
@@ -274,11 +274,11 @@ kubectl get svc
 
 **Note:-** Write down the **ClusterIP** for **prometheus-server**
 
-![Kubectl Get Prometheus Cluster IP](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/kubectl-get-svc.png "Kubectl Get Prometheus Cluster IP")
+![Kubectl Get Prometheus Cluster IP](https://raw.githubusercontent.com/ktchethan/testPytonService/tree/devlop/screenshots/kubectl-get-svc.png "Kubectl Get Prometheus Cluster IP")
 
 6. Add the **ClusterIP** as the **Prometheus** url
 
-![Grafana Add Data Source Prometheus IP](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/grafan-configuration-add-data-source-prometheus.png "Grafana Add Data Source Prometheus IP")
+![Grafana Add Data Source Prometheus IP](https://raw.githubusercontent.com/testPytonService/tree/devlop/screenshots/grafan-configuration-add-data-source-prometheus.png "Grafana Add Data Source Prometheus IP")
 
 7. Click **Save & Test**
 
