@@ -237,17 +237,10 @@ Open your browser and point to [http://localhost:9090](http://localhost:9090) yo
 
 Open your browser and point to [http://localhost:9090](http://localhost:9090) you will see **Prometheus UI**. Go to **Status** > **Configuration** and you can see that your configuration has been added under **scrape_configs:**.
 
-![Prometheus Configuration](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/prometheus-config.png "Prometheus Configuration")
+![Prometheus Configuration](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/prometheus-config.png "Prometheus Configuration")
 
 5. Check **Prometheus** metrics collected from our **Application**
 
-![Prometheus External URL Response Milliseconds](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/prometheus-external-url-response-ms-table.png "Prometheus External URL Response Milliseconds")
-
-![Prometheus External URL Response Milliseconds](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/prometheus-external-url-response-ms.png "Prometheus External URL Response Milliseconds")
-
-![Prometheus External URL Up](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/prometheus-external-url-up-table.png "Prometheus External URL Up")
-
-![Prometheus External URL Up](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/prometheus-external-url-up.png "Prometheus External URL Up")
 
 6. Open Grafana
 
@@ -267,11 +260,11 @@ Enter the **username** and **password** we already collected to login.
 
 3. Click on **Add data source**
 
-![Grafana Add Data Source](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/grafan-configuration.png "Grafana Add Data Source")
+![Grafana Add Data Source](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/grafan-configuration.png "Grafana Add Data Source")
 
 4. Select **Prometheus** as the data source
 
-![Grafana Add Data Source Prometheus](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/grafan-configuration-add-data-source.png "Grafana Add Data Source Prometheus")
+![Grafana Add Data Source Prometheus](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/grafan-configuration-add-data-source.png "Grafana Add Data Source Prometheus")
 
 5. Check Prometheus cluster ip
 
@@ -281,11 +274,11 @@ kubectl get svc
 
 **Note:-** Write down the **ClusterIP** for **prometheus-server**
 
-![Kubectl Get Prometheus Cluster IP](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/kubectl-get-svc.png "Kubectl Get Prometheus Cluster IP")
+![Kubectl Get Prometheus Cluster IP](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/kubectl-get-svc.png "Kubectl Get Prometheus Cluster IP")
 
 6. Add the **ClusterIP** as the **Prometheus** url
 
-![Grafana Add Data Source Prometheus IP](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/grafan-configuration-add-data-source-prometheus.png "Grafana Add Data Source Prometheus IP")
+![Grafana Add Data Source Prometheus IP](https://raw.githubusercontent.com/ktchethan/testPytonService/main/screenshots/grafan-configuration-add-data-source-prometheus.png "Grafana Add Data Source Prometheus IP")
 
 7. Click **Save & Test**
 
@@ -296,10 +289,7 @@ kubectl get svc
 
 2. Click on **Upload JSON file** and select the file from the **grafana** folder within this repository.
 
-![Import Grafan Dashboard Step1](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/grafan-import-dashboard1.png "Import Grafan Dashboard Step1")
-
-![Import Grafan Dashboard Step2](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/grafan-import-dashboard2.png "Import Grafan Dashboard Step2")
 
 3. Click on **Import** button it will create the dashboard with the **Prometheus** metrics.
 
-![Import Grafan Dashboard Step3](https://raw.githubusercontent.com/ktchethan/testservice/main/screenshots/grafan-import-dashboard3.png "Import Grafan Dashboard Step3")
+
