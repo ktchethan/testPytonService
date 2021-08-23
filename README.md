@@ -1,4 +1,4 @@
-# Sample External URL
+# Test External URL
 This is a sample application in **Python** which is collecting external **URL** metrics and producing Prometheus format metrics at the endpoint **/metrics**. Prometheus is collecting the metrics from the endpoint and a dashboard in Grafana is used to display the metrics.
 
 The following **URLS** are being used as demo:-
